@@ -1,0 +1,21 @@
+.discourse-image-gallery .image-wrapper {
+	position: relative;
+	overflow: hidden;
+	border: 2px solid #888;
+}
+
+.discourse-image-gallery .image-wrapper img {
+	max-width: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.discourse-image-gallery > .lightbox-wrapper {
+	margin-right: 10px;
+}
+
+.discourse-image-gallery > .image-wrapper {
+	display: inline-block;
+	margin-right: 10px;
+}

@@ -1,0 +1,10 @@
+image_gallery:
+  image_gallery_thumbnail_width:
+    default: "200"
+    client: true
+  image_gallery_thumbnail_height:
+    default: "200"
+    client: true
+  image_gallery_allowable_children:
+    default: ".lightbox-wrapper, img"
+    client: true
