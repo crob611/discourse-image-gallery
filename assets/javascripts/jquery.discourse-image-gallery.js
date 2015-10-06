@@ -1,5 +1,6 @@
 (function() {
   var buildImageGallery = function($gallery, opts) {
+    console.log($gallery[0].innerHTML);
     stripNonImages($gallery, opts.allowableChildren);
     $gallery.find("img").wrap('<div class="image-wrapper"></div>');
     $gallery.find(".image-wrapper").css({
@@ -54,7 +55,7 @@
     });
   }
 
-  $.fn.ImageGallery = function(options) {
+  $.fn.DiscourseImageGallery = function(options) {
     var defaults = { dimensions: {width: 200, height: 200}, allowableChildren: "img" },
         opts = $.extend(defaults, options || {});
 
