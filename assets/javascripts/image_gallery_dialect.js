@@ -1,10 +1,9 @@
 (function() {
-  Discourse.Dialect.replaceBlock({
-    start: /(\[image\-gallery\])([\s\S]*)/igm,
-    stop: '[/image-gallery]',
-    //rawContents: true,
-    emitter: function(contents) {
-      return ['p', ['div', { 'class': 'discourse-image-gallery'}].concat(contents.join("\n"))];
-    }
-  });
+  function replaceImageGalery (text) {
+    text.replace("[image-gallery]","<p><div class='discourse-image-gallery;'>".concat(contents.join('\n')));
+    text.replace("[/image-gallery]","</div></p>");
+    return text;
+  }
+
+  Discourse.Dialect.addPreProcessor(replaceImageGalery);
 })();
