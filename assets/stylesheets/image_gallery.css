@@ -1,7 +1,8 @@
 .discourse-image-gallery .image-wrapper {
 	position: relative;
 	overflow: hidden;
-	border: 2px solid #888;
+	border: 1px solid #888;
+	box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.6);
 }
 
 .discourse-image-gallery .image-wrapper img {
