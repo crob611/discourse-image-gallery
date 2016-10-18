@@ -1,10 +1,17 @@
 (function() {
+  if (Discourse.dialect_deprecated) { 
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    return; 
+  }
+
+  Discourse.Markdown.whiteListTag('div', 'class', 'discourse-image-gallery');
   Discourse.Dialect.replaceBlock({
     start: /(\[image\-gallery\])([\s\S]*)/igm,
-    stop: '[/image-gallery]',
+    stop: /\[\/image\-gallery\]/igm,
     //rawContents: true,
     emitter: function(contents) {
-      return ['p', ['div', { 'class': 'discourse-image-gallery'}].concat(contents.join("\n"))];
+      var thing = ['p', ['div', { 'class': 'discourse-image-gallery'}].concat(contents.join("\n"))];
+      return thing;
     }
   });
 })();

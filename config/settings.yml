@@ -8,3 +8,6 @@ image_gallery:
   image_gallery_allowable_children:
     default: ".lightbox-wrapper, img"
     client: true
+  gallery_enabled:
+    default: true
+    client: true

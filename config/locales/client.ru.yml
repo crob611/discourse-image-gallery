@@ -1,0 +1,11 @@
+ru:
+  admin_js:
+    admin:
+      site_settings:
+        categories:
+          image_gallery: 'Вставить галерею'
+  js:
+    gallery:
+      title: 'Вставить галерею'
+    composer:
+      gallery_content: 'Вставьте сюда изображения'
