@@ -4,7 +4,7 @@ ru:
       site_settings:
         categories:
           image_gallery: 'Вставить галерею'
+          gallery_title: 'Вставить галерею'
   js:
     composer:
-      gallery_title: 'Вставить галерею'
-      gallery_content: 'Вставте сюда изображения'
+      gallery_content: 'Вставьте сюда изображения'
