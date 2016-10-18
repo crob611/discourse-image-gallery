@@ -1,9 +1,17 @@
 (function() {
-  function replaceImageGalery (text) {
-    text = text.replace("[image-gallery]","<p><div class='discourse-image-gallery;'>");
-    text = text.replace("[/image-gallery]","</div></p>");
-    return text;
-}
+  if (Discourse.dialect_deprecated) { 
+    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
+    return; 
+  }
 
-  Discourse.Dialect.addPreProcessor(replaceImageGalery);
+  Discourse.Markdown.whiteListTag('div', 'class', 'discourse-image-gallery');
+  Discourse.Dialect.replaceBlock({
+    start: /(\[image\-gallery\])([\s\S]*)/igm,
+    stop: /\[\/image\-gallery\]/igm,
+    //rawContents: true,
+    emitter: function(contents) {
+      var thing = ['p', ['div', { 'class': 'discourse-image-gallery'}].concat(contents.join("\n"))];
+      return thing;
+    }
+  });
 })();
