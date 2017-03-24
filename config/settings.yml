@@ -1,4 +1,7 @@
-image_gallery:
+plugins:
+  image_gallery_enabled:
+    default: true
+    client: true
   image_gallery_thumbnail_width:
     default: "200"
     client: true

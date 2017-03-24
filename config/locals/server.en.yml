@@ -1,5 +1,6 @@
 en:
   site_settings:
+    image_gallery_enabled: "Allow image galleries"
     image_gallery_thumbnail_width: "Width to make images in gallery"
     image_gallery_thumbnail_height: "Height to make images in gallery"
     image_gallery_allowable_children: "CSS selector for immediate children nodes to turn into thumbnail images. All other children will be discarded."

@@ -1,9 +1,8 @@
-# name: Image_Gallery
-# about: Display a bunch of images in a nice gallery format
-# version: 0.1
+# name: image-gallery
+# about: A basic image gallery
+# version: 1.0.0
 # authors: Corey Robertson (@crob611)
+enabled_site_setting :image_gallery_enabled
 
-register_asset "javascripts/image_gallery_dialect.js", :server_side
-register_asset "javascripts/image_gallery.js"
-register_asset "javascripts/jquery.discourse-image-gallery.js"
-register_asset "stylesheets/image_gallery.css"
+register_asset "javascripts/ImageGallery.js"
+register_asset "stylesheets/image-gallery.css"

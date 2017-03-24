@@ -1,4 +1,4 @@
-(function() {
+(function($) {
   var buildImageGallery = function($gallery, opts) {
     stripNonImages($gallery, opts.allowableChildren);
     $gallery.find("img").wrap('<div class="image-wrapper"></div>');
@@ -8,9 +8,18 @@
     })
 
     $gallery.find("img").each(function() {
-      var $this = $(this);
-      scaleImage($this, opts.dimensions);
-      centerImage($this, opts.dimensions);
+      if (this.complete) {
+        var $this = $(this);
+        scaleImage($this, opts.dimensions);
+        centerImage($this, opts.dimensions);
+      } else {
+        this.onload = () => {
+          var $this = $(this);
+          scaleImage($this, opts.dimensions);
+          centerImage($this, opts.dimensions);
+        }
+      }
+
     });
   }
 
@@ -41,7 +50,7 @@
   }
 
   var centerImage = function($image, dimensions) {
-    var height = $image.attr("height"), 
+    var height = $image.attr("height"),
         width = $image.attr("width");
 
 
@@ -62,4 +71,4 @@
       buildImageGallery($(this), opts);
     });
   };
-})();
+})(jQuery);
